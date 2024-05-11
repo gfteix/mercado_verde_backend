@@ -28,7 +28,8 @@ export class OrderService {
       return orderItem;
     });
 
-    const productIds = Array(productToQuantity.keys());
+    const productIds = Array.from(productToQuantity.keys());
+
     const products = await productRepository.find({
       where: { id: In(productIds) },
     });

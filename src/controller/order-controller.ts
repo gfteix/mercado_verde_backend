@@ -15,7 +15,7 @@ class OrderController {
   ): Promise<void> {
     try {
       const payload = req.body as CreateOrderPayload;
-      const userId = req["claims"];
+      const userId = req["claims"]["userId"];
 
       if (!userId) {
         throw new UnauthorizedError();
@@ -37,7 +37,7 @@ class OrderController {
 
   static getOrders(req: Request, res: Response, next: NextFunction) {
     try {
-      const userId = req["claims"];
+      const userId = req["claims"]["userId"];
 
       if (!userId) {
         throw new UnauthorizedError();
@@ -53,7 +53,7 @@ class OrderController {
 
   static getOrder(req: Request, res: Response, next: NextFunction) {
     try {
-      const userId = req["claims"];
+      const userId = req["claims"]["userId"];
 
       if (!userId) {
         throw new UnauthorizedError();

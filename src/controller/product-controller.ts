@@ -10,7 +10,7 @@ class ProductController {
     next: NextFunction,
   ): Promise<void> {
     try {
-      const { userId } = req["claims"];
+      const { userId } = req["claims"]["userId"];
       const queryParams = req.query as GetProductsPayload;
 
       if (!userId) {
