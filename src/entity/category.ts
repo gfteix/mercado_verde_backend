@@ -16,6 +16,6 @@ export class Category {
   @CreateDateColumn({ name: "created_at" })
   createdAt: Date;
 
-  @Column({ name: "image_url" })
+  @Column({ name: "image_url", nullable: true })
   imageUrl: string;
 }

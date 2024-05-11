@@ -3,7 +3,7 @@ import { Product } from "../entity/product";
 import { GetProductsPayload } from "../schemas/get-products-schema";
 
 export class ProductService {
-  getProducts(payload: GetProductsPayload): Promise<Product[]> {
+  static getProducts(payload: GetProductsPayload): Promise<Product[]> {
     const productRepository = AppDataSource.getRepository(Product);
 
     let query = productRepository.createQueryBuilder("product");

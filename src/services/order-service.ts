@@ -6,7 +6,10 @@ import { Product } from "../entity/product";
 import { CreateOrderPayload } from "../schemas/create-order-schema";
 
 export class OrderService {
-  async create(userId: string, payload: CreateOrderPayload): Promise<Order> {
+  static async create(
+    userId: string,
+    payload: CreateOrderPayload,
+  ): Promise<Order> {
     const orderRepository = AppDataSource.getRepository(Order);
     const productRepository = AppDataSource.getRepository(Product);
 
@@ -42,13 +45,13 @@ export class OrderService {
     return orderRepository.save(order);
   }
 
-  getOrders(userId: string): Promise<Order[]> {
+  static getOrders(userId: string): Promise<Order[]> {
     const orderRepository = AppDataSource.getRepository(Order);
 
     return orderRepository.find({ where: { userId } });
   }
 
-  getOrder(orderId: string): Promise<Order> {
+  static getOrder(orderId: string): Promise<Order> {
     const orderRepository = AppDataSource.getRepository(Order);
 
     return orderRepository.findOneBy({ id: orderId });

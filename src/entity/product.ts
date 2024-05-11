@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   ManyToOne,
   JoinColumn,
+  UpdateDateColumn,
 } from "typeorm";
 import { Category } from "./category";
 
@@ -26,9 +27,12 @@ export class Product {
   @Column()
   price: number;
 
-  @Column("bytea", { nullable: true })
-  image: Buffer;
+  @Column({ name: "image_url", nullable: true })
+  imageUrl: string;
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @UpdateDateColumn({ name: "updated_at" })
+  updatedAt: Date;
 }
