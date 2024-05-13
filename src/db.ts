@@ -1,12 +1,12 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "./entity/user";
+import { User } from "./entities/user";
 
 import * as dotenv from "dotenv";
-import { Category } from "./entity/category";
-import { Product } from "./entity/product";
-import { Order } from "./entity/order";
-import { OrderItem } from "./entity/order-item";
+import { Category } from "./entities/category";
+import { Product } from "./entities/product";
+import { Order } from "./entities/order";
+import { OrderItem } from "./entities/order-item";
 
 dotenv.config();
 

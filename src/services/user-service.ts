@@ -1,10 +1,10 @@
 import { AppDataSource } from "../db";
-import { User } from "../entity/user";
+import { User } from "../entities/user";
 import { RegisterPayload } from "../schemas/register-schema";
 import { ConflictError } from "../errors/conflict-error";
 import { isUUID } from "class-validator";
 import { NotFoundError } from "../errors/not-found-error";
-import { UpdateProfilePayload } from "../schemas/update-schema";
+import { UpdateProfilePayload } from "../schemas/update-profile-schema";
 import { hash } from "bcrypt";
 import { AuthService } from "./auth-service";
 

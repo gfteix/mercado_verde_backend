@@ -5,7 +5,7 @@ import { BadRequestError } from "../errors/bad-request.error";
 import {
   UpdateProfilePayload,
   UpdateProfileSchema,
-} from "../schemas/update-schema";
+} from "../schemas/update-profile-schema";
 import { LoginPayload, LoginSchema } from "../schemas/login-schema";
 import { AuthService } from "../services/auth-service";
 

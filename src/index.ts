@@ -15,7 +15,7 @@ AppDataSource.initialize()
     console.log("Error starting data source");
   });
 
-const PORT = process.env.PORT ?? "6868";
+const PORT = process.env.NODE_LOCAL_PORT ?? "6868";
 const app = express();
 
 app.use(express.json());

@@ -1,5 +1,5 @@
 import { AppDataSource } from "../db";
-import { Product } from "../entity/product";
+import { Product } from "../entities/product";
 import { GetProductsPayload } from "../schemas/get-products-schema";
 
 export class ProductService {

@@ -1,10 +1,12 @@
 {
-    "items": [{
-        "productId": "28f94f92-5bc2-484e-acdc-71fcf5f6d902",
-        "quantity": 2
-    },
-    {
-        "productId": "f1af78ec-372c-4702-aa37-5702007614cc",
-        "quantity": 1
-    }]
+    "items": [
+        {
+            "productId": "28f94f92-5bc2-484e-acdc-71fcf5f6d902",
+            "quantity": 2
+        },
+        {
+            "productId": "f1af78ec-372c-4702-aa37-5702007614cc",
+            "quantity": 1
+        }
+    ]
 }

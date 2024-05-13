@@ -4,7 +4,7 @@ import { LoginPayload } from "../schemas/login-schema";
 import { InternalServerError } from "../errors/internal-error";
 import * as jwt from "jsonwebtoken";
 import { AppDataSource } from "../db";
-import { User } from "../entity/user";
+import { User } from "../entities/user";
 
 export class AuthService {
   static async login(payload: LoginPayload): Promise<string> {

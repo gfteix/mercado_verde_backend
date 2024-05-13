@@ -1,8 +1,8 @@
 import { In } from "typeorm";
 import { AppDataSource } from "../db";
-import { Order } from "../entity/order";
-import { OrderItem } from "../entity/order-item";
-import { Product } from "../entity/product";
+import { Order } from "../entities/order";
+import { OrderItem } from "../entities/order-item";
+import { Product } from "../entities/product";
 import { CreateOrderPayload } from "../schemas/create-order-schema";
 
 export class OrderService {
