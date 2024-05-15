@@ -13,16 +13,14 @@ Stack:
 
 ### Opção 1
 
-**Requirements**
 
 - Docker
 
 **Steps**
-- Crie um arquivo .env na raiz do projeto (use o .env.example como base)
-- Execute `docker compose up`
+1. Crie um arquivo .env na raiz do projeto (use o .env.example como base)
+2. Execute `docker compose up`
 
 ### Opção 2
-**Requirements**
 
 - Node
 - NPM
@@ -30,15 +28,15 @@ Stack:
     - Instale e configure o Postgres com a mesma configurações usada no .env
     - Ou simplesmente rode o postgres a partir de um container: `docker run --name mercadoverde-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres123 -e POSTGRES_USER=mercadoverdeuser -e POSTGRES_DB=mercadoverde  -d postgres`
 
-**Steps**
 
-- Crie um arquivo .env na raiz do projeto (use o .env.example como base)
-- Rode `npm i`
-- Run `npm start`
+1. Crie um arquivo .env na raiz do projeto (use o .env.example como base)
+2. `npm i`
+3. `npm start`
 
 ---
 
 ## Endpoints
+
 POST /users (Register)
 
 
