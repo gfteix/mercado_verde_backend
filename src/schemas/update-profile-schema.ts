@@ -5,6 +5,7 @@ const UpdateProfileSchema = z.object({
   name: z.string().optional(),
   password: z.string().optional(),
   street: z.string().optional(),
+  houseNumber: z.string().optional(),
   city: z.string().optional(),
   zipCode: z.string().optional(),
   country: z.string().optional(),

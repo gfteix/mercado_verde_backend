@@ -5,6 +5,7 @@ const RegisterSchema = z.object({
   name: z.string(),
   password: z.string(),
   street: z.string(),
+  houseNumber: z.string(),
   city: z.string(),
   zipCode: z.string(),
   country: z.string(),

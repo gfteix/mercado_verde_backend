@@ -2,9 +2,10 @@
     "email": "third@email.com",
     "name": "firstName lastName",
     "street": "street",
+    "houseNumber": "100",
     "city": "city",
     "country": "country",
     "zipCode": "zipCode"
 }
-  
+
   

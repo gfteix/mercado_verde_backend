@@ -26,6 +26,9 @@ export class User {
   street: string;
 
   @Column()
+  houseNumber: string;
+
+  @Column()
   city: string;
 
   @Column()
