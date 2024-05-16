@@ -39,7 +39,7 @@
     "start": "ts-node src/index.ts",
     "docker-start": "node build/index.js",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migration": " npm run typeorm migration:run -- -d ./src/data-source.ts",
+    "migration": "npm run typeorm migration:run -- -d ./src/database/database.config.ts",
     "prepare": "husky"
   }
 }
