@@ -24,10 +24,10 @@ class UserController {
         throw new BadRequestError(JSON.stringify(result.error));
       }
 
-      const { token, user } = await UserService.register(payload);
+      const { accessToken, user } = await UserService.register(payload);
 
-      res.header("Authorization", token);
-      res.json({ user });
+      res.header("Authorization", accessToken);
+      res.json({ user, accessToken });
     } catch (error) {
       next(error);
     }

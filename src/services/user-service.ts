@@ -11,7 +11,7 @@ import { AuthService } from "./auth-service";
 class UserService {
   static async register(
     payload: RegisterPayload,
-  ): Promise<{ user: User; token: string }> {
+  ): Promise<{ user: User; accessToken: string }> {
     const userRepository = AppDataSource.getRepository(User);
     const existingUser = await userRepository.findOneBy({
       email: payload.email,
@@ -29,9 +29,9 @@ class UserService {
     };
 
     const createdUser = await userRepository.save(newUser);
-    const token = AuthService.generateToken(createdUser.id);
+    const accessToken = AuthService.generateToken(createdUser.id);
 
-    return { user: createdUser, token };
+    return { user: createdUser, accessToken };
   }
 
   static async update(
