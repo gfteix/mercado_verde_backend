@@ -16,6 +16,6 @@ routes.get("/products", authentication, ProductController.getProducts);
 
 routes.post("/orders", authentication, OrderController.createOrder);
 routes.get("/orders", authentication, OrderController.getOrders);
-routes.get("/orders:/id", authentication, OrderController.getOrder);
+routes.get("/orders/:id", authentication, OrderController.getOrder);
 
 export default routes;

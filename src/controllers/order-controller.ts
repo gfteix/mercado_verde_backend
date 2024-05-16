@@ -35,7 +35,7 @@ class OrderController {
     }
   }
 
-  static getOrders(req: Request, res: Response, next: NextFunction) {
+  static async getOrders(req: Request, res: Response, next: NextFunction) {
     try {
       const { userId } = req["claims"];
 
@@ -43,7 +43,7 @@ class OrderController {
         throw new UnauthorizedError();
       }
 
-      const orders = OrderService.getOrders(userId);
+      const orders = await OrderService.getOrders(userId);
 
       res.json({ orders });
     } catch (error) {
@@ -51,7 +51,7 @@ class OrderController {
     }
   }
 
-  static getOrder(req: Request, res: Response, next: NextFunction) {
+  static async getOrder(req: Request, res: Response, next: NextFunction) {
     try {
       const { userId } = req["claims"];
 
@@ -61,9 +61,9 @@ class OrderController {
 
       const { id } = req.params;
 
-      const orders = OrderService.getOrder(id);
+      const order = await OrderService.getOrder(id);
 
-      res.json({ orders });
+      res.json({ order });
     } catch (error) {
       next(error);
     }
