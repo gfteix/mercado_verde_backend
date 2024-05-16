@@ -126,7 +126,12 @@ curl  -H "Authorization: Bearer <YOUR_TOKEN>" -v http://localhost:6868/api/v1/us
 
 ```
 {
-    "name": "new name 2"
+    "name": "new name 2",
+    "email": "email@email.com",
+    "street": "street",
+    "city": "city",
+    "country": "country",
+    "zipCode": "zipCode",
 }
 
 ```
