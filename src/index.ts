@@ -1,14 +1,15 @@
 import express = require("express");
-import { AppDataSource } from "./db";
+import { AppDataSource } from "./database/database.config";
 import * as dotenv from "dotenv";
 import routes from "./routes";
 import errorHandler from "./middlewares/error-handler";
-
+import seed from "./database/seed";
 dotenv.config();
 
 AppDataSource.initialize()
-  .then(() => {
+  .then(async () => {
     console.log("Data Source has been initialized!");
+    await seed();
   })
   .catch((error) => {
     console.log(error);

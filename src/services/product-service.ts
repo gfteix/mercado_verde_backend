@@ -1,4 +1,4 @@
-import { AppDataSource } from "../db";
+import { AppDataSource } from "../database/database.config";
 import { Product } from "../entities/product";
 import { GetProductsPayload } from "../schemas/get-products-schema";
 

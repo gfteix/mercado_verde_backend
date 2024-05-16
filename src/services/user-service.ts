@@ -1,4 +1,4 @@
-import { AppDataSource } from "../db";
+import { AppDataSource } from "../database/database.config";
 import { User } from "../entities/user";
 import { RegisterPayload } from "../schemas/register-schema";
 import { ConflictError } from "../errors/conflict-error";

@@ -3,7 +3,7 @@ import { UnauthorizedError } from "../errors/unauthorized-error";
 import { LoginPayload } from "../schemas/login-schema";
 import { InternalServerError } from "../errors/internal-error";
 import * as jwt from "jsonwebtoken";
-import { AppDataSource } from "../db";
+import { AppDataSource } from "../database/database.config";
 import { User } from "../entities/user";
 
 export class AuthService {

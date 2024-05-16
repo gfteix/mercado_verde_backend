@@ -1,8 +1,8 @@
 import express = require("express");
-import UserController from "./controller/user-controller";
+import UserController from "./controllers/user-controller";
 import { authentication } from "./middlewares/authentication";
-import ProductController from "./controller/product-controller";
-import OrderController from "./controller/order-controller";
+import ProductController from "./controllers/product-controller";
+import OrderController from "./controllers/order-controller";
 
 const routes = express.Router();
 
