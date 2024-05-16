@@ -6,19 +6,19 @@ export class ProductService {
   static getProducts(payload: GetProductsPayload): Promise<Product[]> {
     const productRepository = AppDataSource.getRepository(Product);
 
-    let query = productRepository.createQueryBuilder("product");
+    let query = productRepository
+      .createQueryBuilder("product")
+      .innerJoinAndSelect("product.category", "category");
 
     if (payload.name) {
-      query = query.where("product.name like :name", {
-        name: `%${payload.name}%`,
+      query = query.andWhere("LOWER(product.name) like :name", {
+        name: `%${payload.name.toLowerCase()}%`,
       });
     }
     if (payload.category) {
-      query = query
-        .innerJoin("product.category", "category")
-        .where("category.name = :categoryName", {
-          categoryName: payload.category,
-        });
+      query = query.andWhere("LOWER(category.name) = :categoryName", {
+        categoryName: payload.category.toLowerCase(),
+      });
     }
 
     return query.getMany();
