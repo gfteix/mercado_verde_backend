@@ -12,7 +12,7 @@ function errorHandler(
   console.log("message: " + error.message);
 
   if (error instanceof ErrorBase) {
-    return res.status(error.statusCode).send(error.message);
+    return res.status(error.statusCode).send({ message: error.message });
   }
   return res.status(500).send("Something went wrong");
 }

@@ -61,7 +61,7 @@ class UserController {
     next: NextFunction,
   ): Promise<void> {
     try {
-      const { userId } = req["claims"]["userId"];
+      const { userId } = req["claims"];
 
       if (!userId) {
         throw new BadRequestError("No user id");
@@ -88,7 +88,7 @@ class UserController {
     next: NextFunction,
   ): Promise<void> {
     try {
-      const { userId } = req["claims"]["userId"];
+      const { userId } = req["claims"];
 
       if (!userId) {
         throw new BadRequestError("No user id");

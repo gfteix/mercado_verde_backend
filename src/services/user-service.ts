@@ -31,7 +31,13 @@ class UserService {
     const createdUser = await userRepository.save(newUser);
     const accessToken = AuthService.generateToken(createdUser.id);
 
-    return { user: createdUser, accessToken };
+    return {
+      user: {
+        ...createdUser,
+        password: undefined,
+      },
+      accessToken,
+    };
   }
 
   static async update(
