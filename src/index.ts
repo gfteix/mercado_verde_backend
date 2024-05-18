@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 import routes from "./routes";
 import errorHandler from "./middlewares/error-handler";
 import seed from "./database/seed";
+import logger from "./middlewares/logger";
 dotenv.config();
 
 AppDataSource.initialize()
@@ -20,7 +21,7 @@ const PORT = process.env.NODE_LOCAL_PORT ?? "6868";
 const app = express();
 
 app.use(express.json());
-
+app.use(logger);
 app.use("/api/v1", routes);
 app.use(errorHandler);
 

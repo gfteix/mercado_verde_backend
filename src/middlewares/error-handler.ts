@@ -8,13 +8,11 @@ function errorHandler(
   res: Response,
   next: NextFunction,
 ) {
-  console.log("statusCode: " + error.statusCode);
-  console.log("message: " + error.message);
-
   if (error instanceof ErrorBase) {
     return res.status(error.statusCode).send({ message: error.message });
   }
-  return res.status(500).send("Something went wrong");
+
+  return res.status(500).send({ message: "Something went wrong" });
 }
 
 export default errorHandler;
