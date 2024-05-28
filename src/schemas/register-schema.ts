@@ -8,6 +8,8 @@ const RegisterSchema = z.object({
   houseNumber: z.string(),
   city: z.string(),
   zipCode: z.string(),
+  state: z.string(),
+  neighborhood: z.string(),
   country: z.string(),
 });
 

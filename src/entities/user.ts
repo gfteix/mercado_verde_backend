@@ -29,7 +29,13 @@ export class User {
   houseNumber: string;
 
   @Column()
+  neighborhood: string;
+
+  @Column()
   city: string;
+
+  @Column()
+  state: string;
 
   @Column()
   country: string;

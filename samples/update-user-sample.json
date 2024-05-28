@@ -3,6 +3,8 @@
     "name": "firstName lastName",
     "street": "street",
     "houseNumber": "100",
+    "neighborhood": "neighborhood",
+    "state": "state",
     "city": "city",
     "country": "country",
     "zipCode": "zipCode"

@@ -4,6 +4,8 @@
     "name": "firstName lastName",
     "street": "street",
     "houseNumber": "100",
+    "state": "state",
+    "neighborhood": "neighborhood",
     "city": "city",
     "country": "country",
     "zipCode": "zipCode"
