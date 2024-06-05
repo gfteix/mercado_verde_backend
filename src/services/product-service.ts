@@ -2,8 +2,16 @@ import { AppDataSource } from "../database/database.config";
 import { Product } from "../entities/product";
 import { GetProductsPayload } from "../schemas/get-products-schema";
 
+type RecursivePartial<T> = {
+  [P in keyof T]?: T[P] extends Buffer ? string : RecursivePartial<T[P]>;
+};
+
+type ProductWithBase64Image = RecursivePartial<Product>; // changing image from buffer to string in both Product and Category types
+
 export class ProductService {
-  static getProducts(payload: GetProductsPayload): Promise<Product[]> {
+  static async getProducts(
+    payload: GetProductsPayload,
+  ): Promise<ProductWithBase64Image[]> {
     const productRepository = AppDataSource.getRepository(Product);
 
     let query = productRepository
@@ -21,6 +29,15 @@ export class ProductService {
       });
     }
 
-    return query.getMany();
+    const products = await query.getMany();
+
+    return products.map((p) => ({
+      ...p,
+      image: p.image.toString("base64"),
+      category: {
+        ...p.category,
+        image: p.category.image.toString("base64"),
+      },
+    }));
   }
 }

@@ -29,8 +29,10 @@ export class Product {
   @Column()
   price: number;
 
-  @Column({ name: "image_url", nullable: true })
-  imageUrl: string;
+  @Column({
+    type: "bytea",
+  })
+  image: Buffer;
 
   @CreateDateColumn({ name: "created_at" })
   createdAt: Date;
